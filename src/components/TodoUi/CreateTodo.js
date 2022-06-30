@@ -1,20 +1,27 @@
 import React from "react";
-
+import { deleteTodo, udpateTodo } from "../../redux/todoAction";
 function CreateTodo(props) {
-  let { title, isDone, index, deleteTodo, updateTodo } = props;
+  let { title, isDone, id, dispatch, setTitle } = props;
   return (
     <li>
       <input
         type="checkbox"
         checked={isDone}
-        onChange={() => updateTodo(index)}
+        id={id}
+        onChange={({ target }) => {
+          dispatch(udpateTodo(target.id));
+        }}
       />
       <p id={isDone && "completed"}> {title}</p>
       <span
         className="close-btn"
-        id={index}
-        onClick={(e) => deleteTodo(e)}
-      >delete</span>
+        id={id}
+        onClick={({ target }) => {
+          dispatch(deleteTodo(target.id));
+        }}
+      >
+        delete
+      </span>
     </li>
   );
 }

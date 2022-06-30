@@ -1,7 +1,7 @@
 import React from "react";
 import { deleteTodo, udpateTodo } from "../../redux/todoAction";
 function CreateTodo(props) {
-  let { title, isDone, id, dispatch, setTitle } = props;
+  let { title, isDone, id, dispatch } = props;
   return (
     <li>
       <input

@@ -24,6 +24,5 @@ const loadFromLocalStorage = () => {
 };
 
 let store = createStore(reducer, loadFromLocalStorage());
-// store.subscribe(() => saveToLocalStorage(store.getState()));
-store.subscribe(()=>{});
+store.subscribe(() => saveToLocalStorage(store.getState()));
 export default store;

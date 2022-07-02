@@ -34,4 +34,3 @@ function randomIdGenerator(number = 10092) {
   return Math.floor(Math.random(number) * number);
 }
 
-console.log(randomIdGenerator());

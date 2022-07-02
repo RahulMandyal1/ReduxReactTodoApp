@@ -1,9 +1,10 @@
 import React from "react";
 import { deleteTodo, udpateTodo } from "../../redux/todoAction";
+import { RiCloseCircleLine } from "react-icons/ri";
 function CreateTodo(props) {
   let { title, isDone, id, dispatch } = props;
   return (
-    <li>
+    <li className="todo-row">
       <input
         type="checkbox"
         checked={isDone}
@@ -13,15 +14,13 @@ function CreateTodo(props) {
         }}
       />
       <p id={isDone && "completed"}> {title}</p>
-      <span
-        className="close-btn"
+      <RiCloseCircleLine
+        className="delete-icon"
         id={id}
         onClick={({ target }) => {
           dispatch(deleteTodo(target.id));
         }}
-      >
-        delete
-      </span>
+      />
     </li>
   );
 }

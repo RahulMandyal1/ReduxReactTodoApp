@@ -1,4 +1,4 @@
-import {ADD_TODO , DELETE_TODO , UPDATE_TODO} from  "./todoTypes";
+import {ADD_TODO , DELETE_TODO , COMPLETED_TODO} from  "./todoTypes";
 
 //this function is to perform add todo action
 export function addTodo(payload){
@@ -19,7 +19,7 @@ export function deleteTodo( payload){
 //this function is perform update action 
 export function udpateTodo(payload){
     return {
-        type : UPDATE_TODO,
+        type : COMPLETED_TODO,
         payload : Number(payload)
     }
 }

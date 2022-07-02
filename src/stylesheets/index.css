@@ -1,108 +1,171 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    transition: 0.1s all ease-in-out;
-  }
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    background: linear-gradient(#69e7cc, #2d4e89);
-    min-height: 100vh;
-  }
-  .flex-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.1s all ease-in-out;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: #24292d;
+  min-height: 100vh;
+}
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4% 14%;
+  display: flex;
+  justify-content: space-between;
+}
+.flex-45 {
+  flex: 0 1 45%;
+  min-height: 100%;
+}
+.todo-container {
+  flex: 0 1 45%;
+  background: #323840;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  padding: 2.5rem;
+}
+
+.todo-input-container {
+  position: relative;
+  width: 100%;
+}
+.todo-input-container input {
+  width: 100%;
+}
+.todo-container-heading {
+  margin-bottom: 1rem;
+}
+.todo-container-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* user input box container   */
+.userinput {
+  height: 4rem;
+  border: 0.1rem solid rgb(251, 243, 243);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  outline: 0.1rem solid #8402ff;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: transparent;
+}
+::placeholder {
+  color: #fff;
+  font-weight: 400;
+}
+
+.todo-row {
+  margin: 1rem 0;
+  border-radius: 0.4rem;
+  list-style-type: none;
+  padding: 1rem;
+  position: relative;
+}
+.todo-row p {
+  font-size: 1.5rem;
+  margin: 0 0 0 3rem;
+  color: #fff;
+}
+
+.delete-icon {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+#completed {
+  text-decoration: line-through;
+  color: rgb(250, 206, 206);
+}
+
+/* todo button styling  */
+.todo-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo-button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgb(7, 157, 107) 100%
+  );
+}
+
+/* Enter different todo background color  should be different */
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
+
+@media screen and (max-width: 768px) {
   section {
-    width: 100%;
-    min-height: 100vh;
+    padding: 2rem;
+    flex-direction: column;
   }
   .todo-container {
-    margin: 12rem auto;
-    max-width: 50rem;
-    background: #fff;
-    border-radius: 0.5rem;
-    padding: 2.5rem;
+    flex: 0 1 100%;
   }
-  .todo-heading{
-    margin-bottom:1rem;
+  .flex-45 {
+    flex: 0 1 100%;
   }
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-  }
-  
-  ::placeholder {
-    font-weight: 500;
-  }
-  .userinput {
-    height: 4rem;
-    border: 0.1rem solid #ccc;
-    border-radius: 0.3rem;
-    padding: 1rem;
-    outline: 0.1rem solid #8402ff;
-    font-weight: 600;
-    color: #777;
-    display: flex;
-    flex-flow: column wrap;
-  }
-  li {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 0.1rem dotted #ccc;
-    position: relative;
-  }
-  li p {
-    font-size: 1.5rem;
-    margin: 0 0 0 3rem;
-    font-weight: 600;
-    color: #333;
-  }
-  li span {
-    position: absolute;
-    right: 0rem;
-  }
-  span  {
-    background-color: #8402ff;
-    display: inline-block;
-    padding: .4rem 1rem;
-    color: #fff;
-    font-size: 1.5rem;
-    border-radius: .4rem;
-  }
-  span:hover {
-    background: #ff0000;
-  }
-  
-  #completed{
-    text-decoration: line-through;
-    color: gray;
-  }
-  .userclick{
-    background: #8402ff;
-    color: #fff;
-    border: none;
-    border-radius: .4rem;
-  }
-  .todo-input-container{
-    position: relative;
-  }
-  .todo-input-container input{
-    width: 100%;
-  }
-  .todo-input-container button{
-    position: absolute;
-    right: .2rem;
-    top:  .2rem;
-    bottom:  .2rem;
-    padding: 0 .8rem;
-  }
-  .todo-input-container button:hover{
-    background-color: rgb(7, 157, 107);
-  }
+}

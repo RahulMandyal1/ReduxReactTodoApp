@@ -161,11 +161,13 @@ section {
   section {
     padding: 2rem;
     flex-direction: column;
+    justify-content: flex-start;
   }
   .todo-container {
     flex: 0 1 100%;
   }
   .flex-45 {
     flex: 0 1 100%;
+    margin: 2rem 0;
   }
 }
